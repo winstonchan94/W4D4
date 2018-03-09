@@ -1,0 +1,24 @@
+<form action="<%= albums_url %>" method="post">
+  <label>Album Title
+    <input type="text" name="album[title]" value="<%=@album.title%>">
+  </label>
+  <label>Artist
+    <select name='album[band_id]'>
+        <% Band.all.each do |band| %>
+            <option
+                <%= "selected" if @album.band_id == band.id %>
+                value="<%= band.id %>">
+                <%= band.name %>
+            </option>
+        <% end %>
+    </select>
+  </label>
+  <label>Year
+    <input type="text" name="album[year]" value="<%= @album.year %>">
+  </label>
+  <label>Live?
+    <input type="radio" name="album[live]" value='t'<%= "checked" if @album.live %>>
+    <input type="radio" name="album[live]" value='f'<%= "checked" unless @album.live %>>
+  </label>
+  <button>Create Album</button>
+</form>

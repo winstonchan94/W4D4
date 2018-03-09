@@ -1,0 +1,9 @@
+<form action='<%= session_url %>' method="POST">
+  <label>Email
+    <input type="text" name='user[email]' value='<%= @email %>' >
+  </label>
+  <label>Password
+    <input type="password" name='user[password]'>
+  </label>
+  <button>Log In</button>
+</form>

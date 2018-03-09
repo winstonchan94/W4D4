@@ -1,0 +1,14 @@
+<a href="<%= band_url(@album.band) %>">Back To Band</a>
+<h1> <%= @album.title %> </h1>
+<ul>
+  <li>Artist: <%= @album.band.name %> </li>
+  <li>Year: <%= @album.year %></li>
+  <li>Recorded Live: <%= @album.live %></li>
+</ul>
+<h3>Tracks</h3>
+<a href='<%= new_track_url %>'>Add a Track</a>
+<ul>
+  <% @album.tracks.order('ord').each do |track| %>
+     <li><%= track.ord %>  <a href='<%= track_url(track) %>'><%= track.title %></a></li>
+  <% end %>
+</ul>

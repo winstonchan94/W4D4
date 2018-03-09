@@ -1,0 +1,6 @@
+<% Band.all.each do |band| %>
+  <ul>
+    <li><%= render 'band', band: band %></li>
+    <li><a href='<%= band_url(band) %>'><p>Visit Band Page</p></a></li>
+  </ul>
+<% end %>

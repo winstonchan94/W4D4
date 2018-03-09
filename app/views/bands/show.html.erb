@@ -1,0 +1,10 @@
+<%= render 'band', band: @band %>
+<h1>Albums</h1>
+<a href='<%= new_album_url %>'><p>Add Album</p></a>
+<% @band.albums.order('year').each do |album| %>
+  <a href='<%= album_url(album) %>'><li><%= album.title %>  (<%= album.year %>)</li></a>
+  <form action="<%= album_url(album) %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete Album</button>
+  </form>
+<% end %>

@@ -1,0 +1,24 @@
+<form action="<%= tracks_url %>" method="post">
+  <label>Title
+  <input type="text" name="track[title]" value="<%= @track.title %>">
+  </label>
+  <label>Album
+    <select name="track[album_id]">
+      <% Album.all.each do |album| %>
+        <option <%= "selected" if @track.album_id == album.id %>
+         value="<%= album.id %>"><%= album.title %></option>
+      <% end %>
+    </select>
+  </label>
+  <label>Track Number
+    <input type="text" name="track[ord]" value="<%= @track.ord %>">
+  </label>
+  <label>Bonus
+    <input type="radio" name="track[bonus]" value="true" <%= "checked" if @track.bonus %>>
+    <input type="radio" name="track[bonus]" value="false" <%= "checked" unless @track.bonus %>>
+  </label>
+  <label>Lyrics
+    <textarea name="track[lyrics]" rows="8" cols="80" value = "<%= @track.lyrics %>"></textarea>
+  </label>
+  <button>Create Track</button>
+</form>

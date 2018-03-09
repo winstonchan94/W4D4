@@ -1,0 +1,9 @@
+<a href="<%= album_url(@track.album) %>">Back To Album</a>
+<a href="<%= band_url(@track.band) %>">Back To Band</a>
+<h1><%= @track.title %></h1>
+<ul>
+  <li>Track Number: <%= @track.ord %></li>
+  <li>Album: <%= @track.album.title %></li>
+  <li>Band: <%= @track.band.name %></li>
+  <li>Bonus: <%= @track.bonus %></li>
+</ul>
