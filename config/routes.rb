@@ -5,5 +5,6 @@ resource :session, only: [:new, :create, :destroy]
 resources :bands
 resources :albums
 resources :tracks
+
 # root to: redirect('/users')
 end
